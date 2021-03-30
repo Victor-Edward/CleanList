@@ -1,16 +1,16 @@
 from django.db import models
 
 class Customer(models.Model):
-    name = models.CharField(max_length=100)
-    contact = models.CharField(max_length=100)
-    address = models.CharField(max_length=150)
+    nome = models.CharField(max_length=100)
+    contato = models.CharField(max_length=100)
+    endereço = models.CharField(max_length=150, default='')
     
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
-    product_type = models.CharField(max_length=100)
-    quantity = models.IntegerField()
+    nome = models.CharField(max_length=100)
+    tipo_de_produto = models.CharField(max_length=100)
+    quantitade = models.IntegerField()
     
 
 
