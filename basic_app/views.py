@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (TemplateView, DetailView, ListView, CreateView)
+from django.views.generic import (TemplateView, DetailView, ListView, CreateView, UpdateView)
 from .forms import CustomerForm, ProductForm
 from .models import Customer, Product
 
@@ -16,3 +16,9 @@ class CreateProductView(CreateView):
 
 class ProductListView(ListView):
     model = Product
+    template_name = 'basic_app/product_list.html'
+
+class ProductUpdateView(UpdateView):
+    redirect_field_name = 'basic_app/product_list.html'
+    model = Product
+    fields = ['name', 'product_type', 'brand', 'quantity']

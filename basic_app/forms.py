@@ -3,13 +3,26 @@ from .models import Customer, Product
 
 class CustomerForm(forms.ModelForm):
 
-    class meta():
+    class Meta:
         model = Customer
-        fields = ('nome', 'contato', 'endereço')
+        fields = ('name', 'contact', 'address')
+    
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].label = "Nome"
+        self.fields['contact'].label = "Contato"
+        self.fields['address'].label = "Endereço"
 
 class ProductForm(forms.ModelForm):
 
-    class meta():
+    class Meta:
         model = Product
-        fields = ('nome', 'tipo_de_produto', 'quantidade')
+        fields = ('name', 'product_type', 'brand', 'quantity')
+
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].label = "Nome"
+        self.fields['product_type'].label = "Tipo de produto"
+        self.fields['brand'].label = "Marca"
+        self.fields['quantity'].label = "Quantidade em estoque"
 
