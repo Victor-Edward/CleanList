@@ -1,0 +1,14 @@
+{% extends 'basic_app/base.html' %}
+{% load bootstrap3 %}
+
+{% block body_block %}
+    <div class='container'>
+        <h1>Novo produto:</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input class='confirm_button' type="submit" value="Confirmar">
+        </form>
+    </div>
+
+{% endblock  %}

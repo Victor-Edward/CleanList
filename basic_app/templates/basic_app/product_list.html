@@ -5,7 +5,7 @@
         <button><a href="{% url 'product_create' %}">Novo produto</a></button>
         <h1>Estes são os produtos disponíveis no estoque:</h1>
         {% for product in product_list %}
-            <h2><a href="{% url 'product_detail' pk=product.pk %}"></a></h2>
+            <h2><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h2>
         {% endfor %}
     </div>
 {% endblock  %}

@@ -1,10 +1,10 @@
-.container{
+.container_custom{
     width: 100%;
     height: 60px;
     font-family: 'Montserrat', sans-serif;
 }
 
-.navbar{
+.navbar_custom{
     position: fixed;
     top: 0;
     width: 100%;
@@ -16,12 +16,12 @@
     margin-bottom: 10px;
 }
 
-.navbar img{
+.navbar_custom img{
     width: 8em;
     height: auto;
 }
 
-.links{
+.links_custom{
     list-style-type: none;
     margin: 10px;
     padding: 0;
@@ -37,7 +37,7 @@
     
 }
 
-.links li a{
+.links_custom li a{
     cursor: pointer;
     text-decoration: none;
     color: white;
