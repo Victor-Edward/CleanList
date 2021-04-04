@@ -6,6 +6,9 @@ class Customer(models.Model):
     contact = models.CharField(max_length=100)
     address = models.CharField(max_length=150, default='')
 
+    def get_absolute_url(self):
+        return reverse("customer_detail", kwargs={"pk": self.pk})
+
     def __str__(self):
         return self.name
     

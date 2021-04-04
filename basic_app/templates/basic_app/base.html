@@ -14,9 +14,9 @@
 <body>
     <div class='container_custom'>
         <nav class='navbar_custom'>
-            <img src="{% static 'images/Logo.png' %}" alt="Citel">
+            <a href="{% url 'index' %}"><img src="{% static 'images/Logo.png' %}" alt="Citel"></a>
             <ul class='links_custom'>
-                <li><a href="">Clientes</a></li>
+                <li><a href="{% url 'customer_view' %}">Clientes</a></li>
                 <li><a href="{% url 'product_view' %}">Estoque</a></li>
                 <li><a href="">Serviços</a></li>
             </ul>

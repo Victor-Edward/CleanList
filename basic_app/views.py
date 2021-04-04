@@ -28,3 +28,25 @@ class ProductUpdateView(UpdateView):
 class ProductDeleteview(DeleteView):
     model = Product
     success_url = reverse_lazy('product_view')
+
+class CustomerListView(ListView):
+    model = Customer
+    template_name = 'basic_app/customer_list.html'
+
+class CreateCustomerView(CreateView):
+    redirect_field_name = 'basic_app/customer_detail.html'
+    form_class = CustomerForm
+    model = Customer 
+
+class CustomerDetailView (DetailView):
+    model = Customer
+    template_name = 'basic_app/customer_detail.html'
+
+class CustomerDeleteView(DeleteView):
+    model = Customer
+    success_url = reverse_lazy('customer_view')
+
+class CustomerUpdateView(UpdateView):
+    redirect_field_name = 'basic_app/customer_list.html'
+    model = Customer
+    fields = ['name', 'contact', 'address']

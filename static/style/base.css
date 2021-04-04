@@ -42,3 +42,27 @@
     text-decoration: none;
     color: white;
 }
+
+/* Style for product_list.html */
+
+.add_new_button{
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    width: 8em;
+    height: 2em;
+    border-radius: 10px;
+    background-color: #40916c;
+    color: white;
+    border: 1px solid #1b4332;
+    margin: 0 3em 3em 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
