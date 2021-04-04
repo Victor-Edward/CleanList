@@ -4,7 +4,7 @@
     <div class='container'>
         <form method="post">
             {% csrf_token %}
-            <h2>Tem certeza que quer apagar {{ customer.name }}?</h2>
+            <h2>Tem certeza que quer apagar {{ product.name }}?</h2>
             <a class='btn btn-warning' href="{% url 'product_detail' pk=product.pk %}">Cancelar</a>
             <input class='btn btn-danger' type="submit" value="Confirmar">
         </form>
