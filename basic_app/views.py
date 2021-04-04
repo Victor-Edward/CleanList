@@ -3,6 +3,7 @@ from django.views.generic import (TemplateView, DetailView, ListView, CreateView
 from .forms import CustomerForm, ProductForm
 from .models import Customer, Product
 from django.urls import reverse_lazy
+from django.core.files.storage import FileSystemStorage
 
 class Index(TemplateView):
     template_name = 'index.html'
@@ -23,7 +24,7 @@ class ProductListView(ListView):
 class ProductUpdateView(UpdateView):
     redirect_field_name = 'basic_app/product_list.html'
     model = Product
-    fields = ['name', 'product_type', 'brand', 'quantity']
+    fields = ['name', 'product_type', 'brand', 'quantity', 'photo']
 
 class ProductDeleteview(DeleteView):
     model = Product
@@ -49,4 +50,4 @@ class CustomerDeleteView(DeleteView):
 class CustomerUpdateView(UpdateView):
     redirect_field_name = 'basic_app/customer_list.html'
     model = Customer
-    fields = ['name', 'contact', 'address']
+    fields = ['name', 'contact', 'address', 'photo']

@@ -4,7 +4,7 @@
 {% block body_block %}
     <div class='container'>
         <h1>Novo produto:</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}
             <input class='confirm_button' type="submit" value="Confirmar">

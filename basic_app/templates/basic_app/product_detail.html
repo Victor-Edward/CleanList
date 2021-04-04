@@ -2,6 +2,9 @@
 
 {% block body_block %}
     <div class='container'>
+        {% if product.photo %}
+            <img src="{{ product.photo.url }}" alt="">
+        {% endif %}
         <h2>Nome: <strong>{{ product.name }}</strong></h2>
         <h3>Tipo de produto: <strong>{{ product.product_type }}</strong></h3>
         <h3>Marca do produto: <strong>{{ product.brand }}</strong></h3>

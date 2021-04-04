@@ -1,4 +1,9 @@
 {% extends 'basic_app/base.html' %}
+{% load static %}
+
+{% block style_block %}
+    <link rel="stylesheet" href="{% static 'style/customers/style_customer_list.css' %}">
+{% endblock  %}
 
 {% block body_block %}
     <div>
