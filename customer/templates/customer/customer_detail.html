@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block body_block %}
+    <div class='container'>
+        {% if customer.photo %}
+            <img src="{{ customer.photo.url }}" alt="">
+        {% endif %}
+        <h2>Nome: <strong>{{ customer.name }}</strong></h2>
+        <h3>Telefone: <strong>{{ customer.contact }}</strong></h3>
+        <h3>Endereço: <strong>{{ customer.address }}</strong></h3>
+        <br>
+        <a class='btn btn-warning' href="{% url 'customer_edit' pk=customer.pk %}">Editar</a>
+        <a class='btn btn-danger' href="{% url 'customer_delete' pk=customer.pk %}">Excluir</a>
+    </div>
+{% endblock  %}
