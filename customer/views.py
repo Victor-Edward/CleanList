@@ -23,5 +23,6 @@ class CustomerDeleteView(DeleteView):
 
 class CustomerUpdateView(UpdateView):
     redirect_field_name = 'customer/customer_list.html'
+    template_name = 'customer/customer_update_form.html'
     model = Customer
     fields = ['name', 'contact', 'address', 'photo']

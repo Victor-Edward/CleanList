@@ -19,6 +19,7 @@ class ProductListView(ListView):
 
 class ProductUpdateView(UpdateView):
     redirect_field_name = 'products/product_list.html'
+    template_name = 'products/product_update_form.html'
     model = Product
     fields = ['name', 'product_type', 'brand', 'quantity', 'photo']
 
