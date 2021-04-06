@@ -1,0 +1,11 @@
+.product_image{
+    width: 13em;
+    height: auto;
+
+    border: 0.5px solid black;
+
+    position: relative;
+    display: flex;
+    right: 0;
+    margin-right: 30px;
+}
