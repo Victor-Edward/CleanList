@@ -1,9 +1,14 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block style_block %}
+    <link rel="stylesheet" href="{% static 'style/products/style_products_detail.css' %}">
+{% endblock  %}
 
 {% block body_block %}
     <div class='container'>
         {% if product.photo %}
-            <img src="{{ product.photo.url }}" alt="">
+            <img class='product_image' src="{{ product.photo.url }}" alt="">
         {% endif %}
         <h2>Nome: <strong>{{ product.name }}</strong></h2>
         <h3>Tipo de produto: <strong>{{ product.product_type }}</strong></h3>

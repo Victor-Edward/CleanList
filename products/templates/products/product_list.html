@@ -1,11 +1,37 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block style_block %}
+    <link rel="stylesheet" href="{% static 'style/products/style_products_list.css' %}">
+{% endblock  %}
 
 {% block body_block %}
-    <div>
-        <a class='add_new_button' href="{% url 'product_create' %}">Novo produto</a>
-        <h1>Estes são os produtos disponíveis no estoque:</h1>
-        {% for product in product_list %}
-            <h2><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h2>
-        {% endfor %}
+    <div class='container_block'>
+        <a class='add_new_button' href="{% url 'product_create' %}"><i class="fas fa-plus"></i></a>
+        <h2>Produtos disponíveis no estoque:</h2>
+        <table class='display_table'>
+            <tr>
+                <td><h2>Nome</h2></td>
+                <td><h2>Tipo</h2></td>
+                <td><h2>Marca</h2></td>
+                <td><h2>Quantidade em estoque</h2></td>
+            </tr>
+            {% for product in product_list %}
+            <tr>
+                <td>
+                    <h3><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h3>
+                </td>
+                <td>
+                    <h3>{{ product.product_type }}</h3>
+                </td>
+                <td>
+                    <h3>{{ product.brand }}</h3>
+                </td>
+                <td class='table_center'>
+                    <h3>{{ product.quantity }}</h3>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock  %}
