@@ -76,3 +76,53 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.edit_button{
+    background-color: #FFBF1F;
+    border: 1px solid #FFBF1F;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5em;
+    height: 2em;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.delete_button{
+    background-color: #B50309;
+    border: 1px solid #B50309;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5em;
+    height: 2em;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.confirm_button{
+    background-color: #38B000;
+    border: 1px solid #38B000;
+    border-radius: 4px;
+
+    width: 3em;
+    height: 1.5em;
+
+    text-decoration: none;
+    color: white;
+}

@@ -1,15 +1,43 @@
 .content_container{
     display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    justify-content: center;
+    border-bottom: 1px solid rgba(153, 163, 173, 0.8);
+}
+
+.content_container a{
+    display: flex;
+    right: 0;
+    background-color:red;
+}
+
+.content_container_text{
+    flex-direction: column;
+    width: 50%;
 }
 
 .product_image{
     width: 13em;
-    height: auto;
+    height: 13em;
 
-    border: 0.5px solid black;
+    padding: 0.75em;
 
-    position: relative;
+    border: 1px solid rgba(153, 163, 173, 0.8);
+    border-radius: 4px;
+}
+
+.buttons{
     display: flex;
+    flex-direction: row;
+
     right: 0;
-    margin-right: 30px;
+    width: 95%;
+    justify-content: flex-end;
+}
+
+.buttons a{
+    margin-right: 1em;
 }
