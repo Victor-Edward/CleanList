@@ -1,3 +1,7 @@
+.content_container{
+    display: flex;
+}
+
 .product_image{
     width: 13em;
     height: auto;

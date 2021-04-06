@@ -7,15 +7,17 @@
 
 {% block body_block %}
     <div class='container'>
-        {% if product.photo %}
-            <img class='product_image' src="{{ product.photo.url }}" alt="">
-        {% endif %}
-        <h2>Nome: <strong>{{ product.name }}</strong></h2>
-        <h3>Tipo de produto: <strong>{{ product.product_type }}</strong></h3>
-        <h3>Marca do produto: <strong>{{ product.brand }}</strong></h3>
-        <h3>Quantidade em estoque: <strong>{{ product.quantity }}</strong></h3>
-        <br>
-        <a class='btn btn-warning' href="{% url 'product_edit' pk=product.pk %}">Editar</a>
-        <a class='btn btn-danger' href="{% url 'product_delete' pk=product.pk %}">Excluir</a>
+        <div class=''>
+            {% if product.photo %}
+                <img class='product_image' src="{{ product.photo.url }}" alt="">
+            {% endif %}
+            <h2>Nome: <strong>{{ product.name }}</strong></h2>
+            <h3>Tipo de produto: <strong>{{ product.product_type }}</strong></h3>
+            <h3>Marca do produto: <strong>{{ product.brand }}</strong></h3>
+            <h3>Quantidade em estoque: <strong>{{ product.quantity }}</strong></h3>
+            <br>
+            <a class='btn btn-warning' href="{% url 'product_edit' pk=product.pk %}">Editar</a>
+            <a class='btn btn-danger' href="{% url 'product_delete' pk=product.pk %}">Excluir</a>
+        </div>
     </div>
 {% endblock  %}
