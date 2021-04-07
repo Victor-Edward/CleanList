@@ -3,12 +3,13 @@
 
 {% block body_block %}
     <div class='container'>
-        <h1>Novo Cliente:</h1>
+        <h1>Novo cliente:</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}
-            <input class='confirm_button' type="submit" value="Confirmar">
+            <div class='buttons'>
+                <button class='confirm_button' type="submit"><i class="fas fa-check"></i><strong>Confirmar</strong></button>
+            </div>
         </form>
     </div>
-
 {% endblock  %}

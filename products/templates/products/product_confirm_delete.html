@@ -1,12 +1,14 @@
 {% extends 'base/base.html' %}
 
 {% block body_block %}
-    <div class='container'>
+    <div class='container top_container'>
         <form method="post">
             {% csrf_token %}
             <h2>Tem certeza que quer apagar {{ product.name }}?</h2>
-            <a class='btn btn-warning' href="{% url 'product_detail' pk=product.pk %}">Cancelar</a>
-            <input class='btn btn-danger' type="submit" value="Confirmar">
+            <div class='buttons top_container'>
+                <a class='edit_button' href="{% url 'product_detail' pk=product.pk %}"><i class="fas fa-window-close"></i><strong>Cancelar</strong></a>
+                <button class='delete_button' type="submit"><i class="fas fa-trash"></i><strong>Confirmar</strong></button>
+            </div>
         </form>
     </div>
 {% endblock  %}

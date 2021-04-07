@@ -1,5 +1,6 @@
 :root{
     --add-button-color: #52b788;
+    --gray-line: rgba(153, 163, 173, 0.8);
 }
 
 body{
@@ -10,6 +11,10 @@ body{
     width: 100%;
     height: 60px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.top_container{
+    margin-top: 1.5em;
 }
 
 .navbar_custom{
@@ -51,32 +56,6 @@ body{
     color: white;
 }
 
-
-
-/* Style for product_list.html */
-
-.add_new_button{
-    z-index: 1;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-
-    text-decoration: none;
-    cursor: pointer;
-
-    width: 8em;
-    height: 2em;
-    border-radius: 10px;
-    background-color: #52b788;
-    color: white;
-    border: 1px solid #1b4332;
-    margin: 0 3em 3em 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .edit_button{
     background-color: #FFBF1F;
     border: 1px solid #FFBF1F;
@@ -86,7 +65,7 @@ body{
     justify-content: center;
     align-items: center;
 
-    width: 5em;
+    width: auto;
     height: 2em;
 
     text-decoration: none;
@@ -94,6 +73,17 @@ body{
     font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+}
+
+.edit_button:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #F5AF00;
+}
+
+.edit_button:visited{
+    text-decoration: none;
+    color: white;
 }
 
 .delete_button{
@@ -105,7 +95,7 @@ body{
     justify-content: center;
     align-items: center;
 
-    width: 5em;
+    width: auto;
     height: 2em;
 
     text-decoration: none;
@@ -115,14 +105,191 @@ body{
     font-weight: 500;
 }
 
+.delete_button:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #a10208;
+}
+
+.delete_button:visited{
+    text-decoration: none;
+    color: white;
+}
+
 .confirm_button{
     background-color: #38B000;
     border: 1px solid #38B000;
     border-radius: 4px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    width: 3em;
-    height: 1.5em;
+    width: auto;
+    height: 2em;
 
     text-decoration: none;
     color: white;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.confirm_button:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #34A300;
+}
+
+.confirm_button:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+    right: 0;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.buttons a{
+    margin-right: 1em;
+    padding-right: 0.3em;
+}
+
+.buttons i{
+    padding: 0.2em 0.3em;
+    justify-content: space-around;
+}
+
+.custom-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+.custom-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 38rem;
+    height: 16rem;
+
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    margin: 0px 16px;
+    animation: back 0.1s linear both;
+}
+
+.custom-card:hover {
+    animation: press 0.1s linear both;
+}
+
+.vertical_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid lightgray;
+    width: 8rem;
+    margin-right: 3.5em;
+}
+
+.user_image {
+    margin-right: -100%;
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    z-index: 1;
+    border: 1px solid lightgray;
+    animation: image-lose 0.1s linear both;
+}
+
+.user_image:hover {
+    animation: image-hover 0.1s linear both;
+}
+
+.user_image_link {
+    z-index: 1;
+    margin-right: -100%;
+}
+
+.custom-text-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    white-space: pre-line;
+    margin-right: 1em;
+    ;
+}
+
+.custom-span-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+@keyframes press {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        transform: translateY(16px);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes back {
+    0% {
+        transform: translateY(16px);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes image-hover {
+    0% {
+        padding: 0px;
+        width: 8rem;
+        height: 8rem;
+    }
+    100% {
+        padding: 4px;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@keyframes image-lose {
+    0% {
+        padding: 4px;
+        width: 10rem;
+        height: 10rem;
+    }
+    100% {
+        padding: 0px;
+        width: 8rem;
+        height: 8rem;
+    }
 }

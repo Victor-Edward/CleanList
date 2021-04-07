@@ -1,11 +1,15 @@
 {% extends 'base/base.html' %}
+{% load bootstrap3 %}
 
 {% block body_block %}
-    <div>
+    <div class='container'>
+        <h1>Editar informações:</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Alterar</button>
+            {% bootstrap_form form %}
+            <div class='buttons'>
+                <button class='confirm_button' type="submit"><i class="fas fa-check"></i><strong>Alterar</strong></button>
+            </div>
         </form>
     </div>
 {% endblock  %}

@@ -2,36 +2,45 @@
 {% load static %}
 
 {% block style_block %}
-    <link rel="stylesheet" href="{% static 'style/products/style_products_list.css' %}">
+    <link 
+        rel="stylesheet" 
+        href="{% static 'style/products/style_products_list.css' %}"
+    >
 {% endblock  %}
 
 {% block body_block %}
     <div class='container_block'>
-        <a class='add_new_button' href="{% url 'product_create' %}"><i class="fas fa-plus"></i></a>
+        <a class='add_new_button' href="{% url 'product_create' %}">
+            <i class="fas fa-plus"></i>
+        </a>
         <h2>Produtos disponíveis no estoque:</h2>
-        <table class='display_table'>
-            <tr>
-                <td><h2>Nome</h2></td>
-                <td><h2>Tipo</h2></td>
-                <td><h2>Marca</h2></td>
-                <td><h2>Quantidade em estoque</h2></td>
-            </tr>
+        <ul class='custom-list'>
             {% for product in product_list %}
-            <tr>
-                <td>
-                    <h3><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h3>
-                </td>
-                <td>
-                    <h3>{{ product.product_type }}</h3>
-                </td>
-                <td>
-                    <h3>{{ product.brand }}</h3>
-                </td>
-                <td class='table_center'>
-                    <h3>{{ product.quantity }}</h3>
-                </td>
-            </tr>
+            <li>
+                <div class='custom-card'>
+                    <div class='vertical_bar'>
+                        <a
+                            class='user_image_link'
+                            href="{% url 'product_detail' pk=product.pk %}"
+                        >
+                            <img
+                                class='user_image'
+                                src="{{ product.photo.url }}" 
+                                alt=""
+                            >
+                        </a>
+                    </div>
+                    <div class='custom-text-card'>
+                        <h3>{{ product.name }}</h3>
+                        <div class='custom-span-card'>
+                            <span>{{ product.product_type }}</span>
+                            <span>{{ product.brand }}</span>
+                            <span><strong>{{ product.quantity }} em estoque</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
             {% endfor %}
-        </table>
+        </ul>
     </div>
 {% endblock  %}

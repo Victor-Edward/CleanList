@@ -1,40 +1,45 @@
-{% extends 'base/base.html' %} {% load static %} {% block style_block %}
-<link
-    rel="stylesheet"
-    href="{% static 'style/customers/style_customer_list.css' %}"
-/>
-{% endblock %} {% block body_block %}
-<div class="container_block">
-    <a class="add_new_button" href="{% url 'customer_create' %}"
-        ><i class="fas fa-user-plus"></i
-    ></a>
-    <h2>Clientes cadastrados:</h2>
-    <ul class="custom-list">
-        {% for customer in customer_list %}
-        <li>
-            <div class="custom-card">
-                <div class="vertical_bar">
-                    <a
-                        class="user_image_link"
-                        href="{% url 'customer_detail' pk=customer.pk %}"
-                    >
-                        <img
-                            class="user_image"
-                            src="{{ customer.photo.url }}"
-                            alt=""
-                        />
-                    </a>
-                </div>
-                <div class="custom-text-card">
-                    <h3>{{ customer.name }}</h3>
-                    <div class="custon-span-card">
-                        <span>{{ customer.contact }}</span>
-                        <span>{{ customer.address }}</span>
+{% extends 'base/base.html' %} 
+{% load static %} 
+
+{% block style_block %}
+    <link
+        rel="stylesheet"
+        href="{% static 'style/customers/style_customer_list.css' %}"
+    >
+{% endblock %} 
+
+{% block body_block %}
+    <div class="container_block">
+        <a class="add_new_button" href="{% url 'customer_create' %}"
+            ><i class="fas fa-user-plus"></i
+        ></a>
+        <h2>Clientes cadastrados:</h2>
+        <ul class="custom-list">
+            {% for customer in customer_list %}
+            <li>
+                <div class="custom-card">
+                    <div class="vertical_bar">
+                        <a
+                            class="user_image_link"
+                            href="{% url 'customer_detail' pk=customer.pk %}"
+                        >
+                            <img
+                                class="user_image"
+                                src="{{ customer.photo.url }}"
+                                alt=""
+                            />
+                        </a>
+                    </div>
+                    <div class="custom-text-card">
+                        <h3>{{ customer.name }}</h3>
+                        <div class="custom-span-card">
+                            <span>{{ customer.contact }}</span>
+                            <span>{{ customer.address }}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
