@@ -6,6 +6,7 @@
         rel="stylesheet" 
         href="{% static 'style/products/style_products_list.css' %}"
     >
+    
 {% endblock  %}
 
 {% block body_block %}
@@ -17,7 +18,7 @@
         <ul class='custom-list'>
             {% for product in product_list %}
             <li>
-                <div class='custom-card'>
+                <div class='custom-card fade-in fade-object'>
                     <div class='vertical_bar'>
                         <a
                             class='user_image_link'

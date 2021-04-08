@@ -21,7 +21,7 @@
 
     border: 1px solid var(--gray-line);
     border-radius: 12px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(109, 109, 109, 0.19);
 }
 
 .buttons{
@@ -35,4 +35,16 @@
 
 .buttons a{
     margin-right: 1em;
+}
+
+#map {
+    height: 13em;
+    width: 13em;
+    position: relative;
+
+    padding: 0.75em;
+    border: 1px solid var(--gray-line);
+    border-radius: 12px;
+    margin-left: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(109, 109, 109, 0.19);
 }

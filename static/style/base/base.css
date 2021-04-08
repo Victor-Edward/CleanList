@@ -188,11 +188,13 @@ body{
     box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
     margin: 0px 16px;
     animation: back 0.1s linear both;
+    opacity: 1;
+    animation: fade-in 1s ease forwards;
 }
 
-.custom-card:hover {
+/* .custom-card:hover {
     animation: press 0.1s linear both;
-}
+} */
 
 .vertical_bar {
     display: flex;
@@ -293,3 +295,15 @@ body{
         height: 8rem;
     }
 }
+
+@keyframes fade-in {
+    0% { 
+        transform: translateX(-900px); 
+        opacity: 0;
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 1; 
+    }
+}
+

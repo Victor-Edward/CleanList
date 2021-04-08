@@ -3,6 +3,10 @@
 
 {% block style_block %}
     <link rel="stylesheet" href="{% static 'style/customers/style_customer_detail.css' %}">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key={{ googleapi_key }}&callback=initMap&libraries=places&v=weekly"
+      async
+    ></script>
 {% endblock  %}
 
 {% block body_block %}
@@ -11,15 +15,19 @@
             <div class='content_container_text'>
                 <h2>Nome: <strong>{{ customer.name }}</strong></h2>
                 <h3>Telefone: <strong>{{ customer.contact }}</strong></h3>
-                <h3>Endereço: <strong>{{ customer.address }}</strong></h3>
+                <h3>Endereço: <strong id='address'>{{ customer.address }}</strong></h3>
             </div>
             {% if customer.photo %}
                 <img class='customer_image' src="{{ customer.photo.url }}" alt="">
             {% endif %} 
+            <div id="map"></div>
         </div>
         <div class='buttons'>
             <a class='edit_button' href="{% url 'customer_edit' pk=customer.pk %}"><i class="fas fa-edit"></i><strong>Editar</strong></a>
             <a class='delete_button' href="{% url 'customer_delete' pk=customer.pk %}"><i class="fas fa-trash"></i><strong>Excluir</strong></a>
         </div>       
     </div>
+
+    
+    <script src={% static 'js/map.js' %}></script>
 {% endblock  %}
