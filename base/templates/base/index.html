@@ -1,5 +1,22 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block style_block %}
+    <link 
+        rel="stylesheet" 
+        href="{% static 'style/base/style_index.css' %}"
+    >
+{% endblock  %}
 
 {% block body_block %}
-    <h1>Página inicial</h1>
+    <div class='container content-container'>
+        <div class='content_text'>
+            <h1>Seja bem vindo ao sistema de Gestão!</h1>
+            <h2>Para onde deseja ir?</h2>
+        </div>
+        <div class='content_buttons'>
+            <a class='link_button' href="{% url 'customer_view' %}"><i class="fas fa-users"></i>Clientes</a>
+            <a class='link_button' href="{% url 'product_view' %}"><i class="fas fa-boxes"></i>Estoque</a>
+        </div>
+    </div>
 {% endblock  %}
